@@ -50,8 +50,8 @@ define gui.muted_color = '#3d5166'
 define gui.hover_muted_color = '#5b7a99'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = '#000000'
+define gui.interface_text_color = '#444444'
 
 
 ## Fonts and Font Sizes ########################################################
@@ -106,7 +106,7 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 360
+define gui.name_xpos = 40
 define gui.name_ypos = 0
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
@@ -442,8 +442,9 @@ init python:
         ## Adjust the location of the textbox.
         gui.textbox_height = 360
         gui.name_xpos = 120
-        gui.dialogue_xpos = 135
-        gui.dialogue_width = 1650
+        gui.dialogue_xpos = 120
+        gui.dialogue_ypos = 60
+        gui.dialogue_width = 1460
 
         ## Change the size and spacing of various things.
         gui.slider_size = 54

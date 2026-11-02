@@ -130,22 +130,22 @@ style namebox_label is say_label
 
 
 style window:
+    is default
     xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
-
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    yalign 1.0
+    yoffset -30
+    xsize 1700
+    ysize 280
+    background Frame("gui/textbox_pill.png", 80, 80)
 
 style namebox:
     xpos gui.name_xpos
-    xanchor gui.name_xalign
-    xsize gui.namebox_width
     ypos gui.name_ypos
-    ysize gui.namebox_height
-
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
-    padding gui.namebox_borders.padding
+    xanchor gui.name_xalign
+    xminimum 250
+    ysize 90
+    background Frame("gui/namebox_pill.png", 40, 40)
+    padding (30, 10)
 
 style say_label:
     properties gui.text_properties("name", accent=True)
@@ -1619,3 +1619,89 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+transform rotate_up:
+    rotate -90
+    rotate_pad False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#               ^
+#               |
+#               |
+#             renpy 
+
+#Game code
+
+screen player_health_bar():
+    frame:
+        xalign 0.02
+        yalign 0.02
+        padding (15,10)
+
+        vbox:
+            spacing 5
+            text "Player Health: [player_hp]/100"size 28
+
+            bar: # using claude for help here :
+
+                value StaticValue(player_hp, 100)
+                xsize 300
+                ysize 25
+                left_bar Solid("#ff0000")      # filled part
+                right_bar Solid("#444444")     # empty part
+                thumb None                     # no draggable handle
+# jsut copied and pased the thing above                
+screen iv_health_bar():
+    frame:
+        xalign 0.6
+        yalign 0.04
+        padding (15,10)
+
+        vbox:
+            spacing 5
+            text "Interviwer Health: [iv_hp]/100"size 28
+
+            bar:# using claude for help here :
+
+                value StaticValue(iv_hp, 100)
+                xsize 300
+                ysize 25
+                left_bar Solid("#ff0000")      # filled part
+                right_bar Solid("#444444")     # empty part
+                thumb None                     # no draggable handle
+                
+screen persuasion_bar():
+    frame:
+        xalign 0.02
+        yalign 0.1
+        padding (15,10)
+
+        hbox:
+            spacing 5
+            text "Persuasion" size 36 yalign 0.5 at rotate_up   
+
+            vbar:
+
+                value StaticValue(persuasion, 10)
+                xsize 25
+                ysize 300
+                left_bar Solid("#00ff00")      
+                right_bar Solid("#5a5a5a")     
+                thumb None                     
+            
