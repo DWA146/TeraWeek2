@@ -6,6 +6,8 @@ define narrator_name = Character(None)
 define m = Character("[]", color = "#e6dce1")
 define iv_throw = ["Kiss","embarrass","Domain","pebble throw"]
 define effect = ["SUPER EFFECTIVE","EFFECTIVE","INEFFECTIVE"]
+define pen_list = ["bg pen1","bg pen2","bg pen3","bg pen4","bg pen5"]
+
 #Variables 
 #Player
 default player_name = "Player"
@@ -16,9 +18,11 @@ default iv_hp = 100
 
 #Functions
 
+
+
 #Start
 label start:
-   
+    
 
     
 
@@ -38,7 +42,7 @@ label start:
                 jump interview
             "No":
                 e "Then leave"
-                jump real_fight
+                jump end_interview
 
 
 
@@ -46,8 +50,14 @@ label interview:
     show screen persuasion_bar
     e "Great! Let's begin."
     e "Take this pen and sell it to me."
-    "You got a PEN!"
-    e""
+
+    call random_pen 
+
+
+    "You got a PEN! {w=2.0}{nw}"
+    e"..."
+    scene bg room
+
     menu:
         
         "Sell the pen":
@@ -56,25 +66,30 @@ label interview:
             menu:
             
                 "This pen can write words alot":
-                    e "yeah thats what they all say"
-                    $ persuasion += 0
+                    e "wow you really know your stuff"
+                    $ persuasion += 1
                     show interviewer normal
+
+
                 "This pen is ugly and cheap":
-                    e "so why would anyong but you want it?"
+                    e "so why would any one else but you want it?"
                     $ persuasion += -1
                     call loss_check
                     
                     show interviewer hmm
                     menu:
                         "The ugly design is actually a unique feature that makes it stand out":
-                            e "shut up."
+                            e "shut up MOMMM."
                             $ persuasion += -1
                             call loss_check
                             show interviewer hmm
 
                         "its cheap so who cares ":
                             e "..."
-                            e "I do because I'm buying it stupid"
+                            e "I do? "
+                            "Y"
+                            e "because I'm buying it stupid"
+
                             $ persuasion += -1
                             call loss_check
                             show interviewer hmm
@@ -168,11 +183,13 @@ label interview:
 
 
                     "Quite a lot":
-                        e"Does that mean the build quality is good?"
+                        e"its a bit expensive for a flipping PEN"
+                        $ persuasion -= 1
                            
                     "ion know!":
                         e"..."
                         e"Ahh i get it\nNice joke!"
+                        $ persuasion += 1
                         
                     "how much are you willing to pay for it?":
                         stop music fadeout 1
@@ -188,6 +205,7 @@ label interview:
                         play music "audio/tiger_flute.mp3" fadein 0.5
                         scene bg room
                         "..."
+                        $ persuasion += 2
 
 
 
@@ -233,32 +251,21 @@ label interview:
                         $ persuasion -= 1
                         call loss_check
                 
-            label durability:
-                e"How durable is this pen?"
-                menu:
-                    "Its very durable":
-                        e"Do u got a  example of this?  "
-                        menu:
-                            "It's so strong it can kill a man":
-                                e"yeah right"
-                                menu:
-                                    "I can show you":
-                                        jump real_fight
-                                    "You got me!":
-                                        $ persuasion -= 1
-                                        call loss_check
-                                    
-
-                    
-
             label lethality:
                 e"How lethal is this pen?"
                 menu:
                     "Its very lethal":
                         e"oh my"
+                        "you better watch out for that pen"
+                        e"dont hurt me!"
+                        show interviewer sad
+                        $ persuasion -= 1
+
                     
                     "not very, but it can keep you company!":
                         e"..."
+                        show interviewer raise
+                        $ persuasion += 1
                     
 
                     "Why don't you try and find out!":
@@ -266,6 +273,7 @@ label interview:
                         jump real_fight
             
             label conclusion:
+                show interviewer normal
                 e "Well, I think I've heard enough."
                 e "How well do you think you did? "
                 menu:
@@ -275,11 +283,19 @@ label interview:
                         show interviewer hmm
                         e "..."
                         e "your not getting hired anytime soon "
-                        jump end_interview  
+                        show interviewer raise
+                        menu:
+                            "no i will":
+                                e"you think you can do better than me? {w=1.0} "
+                                "uh yeah"
+                                jump real_fight
+                            "bruh":
+                                jump end_interview  
 
                     "i dont knowwww":
                         e "What do you know then"
                         e "your clearly not a good fit for this company"
+                        show interviewer raise
                         jump end_interview
                     
                     "you have a very pretty face":
@@ -287,21 +303,21 @@ label interview:
                         e"...{w=1.0} ba.. baka! {w=1.0} "
                         e"stop staring at me like that! {w=1.0} "
                         e"eugh! leave already! {w=1.0} "
-                        $ persuasion += 1
+                        $ persuasion += 3
                         call persuasion_check
                         
-                    
-                
-
-        
-
-
-
-
-
+    
         "Dont sell the pen":
-            e "I see. Well, thank you for your time."
-            jump real_fight
+            e "Get the £~*# out of here!"
+            jump end_interview  
+
+
+
+
+
+
+
+
 
 label fight:
     e "What the hell is wrong wih you"
@@ -413,18 +429,21 @@ label real_fight:
     e"your DONE for kiddo"
     show screen player_health_bar
     show screen iv_health_bar
+    define crazy = True
     while True:  
-        if iv_hp <= 20:
-            show interviewer livid:
-                xalign  0.8
-                yalign  0.1
-            scene bg battle blood
-            play music "audio/oath of enma.mp3"
-            
-        else:
-            show interviewer angry:
-                xalign  0.8
-                yalign  0.1
+        if crazy == True:
+            if iv_hp <= 20:
+                show interviewer livid:
+                    xalign  0.8
+                    yalign  0.1
+                scene bg battle blood
+                play music "audio/oath of enma.mp3"
+                $ crazy = False
+                
+            else:
+                show interviewer angry:
+                    xalign  0.8
+                    yalign  0.1
 
         menu:
             "Tackle": 
@@ -435,7 +454,7 @@ label real_fight:
                 call player_attack
                 call iv_attack
 
-s
+
             "Tickle":
                 $ a = "Tickle"
                 if iv_hp > 20:
@@ -448,10 +467,6 @@ s
                 else:
                     "The interviewer can only see red {w=1.0}{nw}"
                     "Tickle is ineffective {w=1.0}{nw}"
-                    show interviewer livid:
-                        xalign  0.8
-                        yalign  0.1
-
                 
                 call iv_attack
                 call health_check
@@ -571,6 +586,7 @@ label persuasion_check:
                     "Stay with him longer":
                         "..."
                     "No":
+                        show interviewer sad
                         "You sold all of his assests"
 
                         "..."
@@ -578,32 +594,60 @@ label persuasion_check:
                         "You Lost Your pen"
 
                         e"Your giving me the pen for free? {w=1.0} "
-                        
+                        show interviewer blush
                         "..."
 
-                        e"Well thanks a "
-
-
-
-
-
-                jump end_interview
+                        e"Well thanks alot! "
+                        "YOU WON!"
+                        jump end_interview
             "2 rupee":
                 e"deal"
+                show interviewer normal
+                "YOU WON!"
                 jump end_interview
+
             "Its your pen btw":
                 e"Ah well i stole it from the police at the start of the interview "
+                play sound "audio/siren.mp3"
                 "You hear sirens in the distance"
+                play sound "audio/siren.mp3"
                 e"Thats my queue to leave!"
                 hide interviewer
                 "..."
                 "..."
+                "..."
+                play sound "audio/break.mp3"
+                scene bg raid 
+                play sound "audio/siren.mp3"
+                "...{w=2.0}{nw}"      
+                play sound "audio/AWP.mp3"          
+                "You got shot {nw}"
+                scene bg dead with dissolve
+
+
+
+
                 jump end_interview
+
+
+
     else:
         "You know what keep the pen, i dont want it anymore"
         jump end_interview
 
     return
+
+
+
+label random_pen:
+    $ chosen_pen = renpy.random.choice(pen_list)
+    scene expression chosen_pen with dissolve
+    return
+
+
+  
+
+
 
 
 
