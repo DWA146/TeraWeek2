@@ -3,7 +3,7 @@
 A visual novel about a seemingly simple task: selling a pen.
 All artwork in the game is hand-drawn, with a lot of time spent on the illustrations, animations and overall presentation.
 
-## SCREENSHOTS
+## Screenshots
 
 A preview of the game:
 
@@ -39,7 +39,7 @@ Work for web
 
 You'll be asked to enter a name before starting.
 
-## HOW TO PLAY
+## How to play
 
 The game follows the standard visual novel format. Read through the dialogue and select responses as they appear.
 
@@ -50,15 +50,16 @@ A few things to keep in mind:
 - **Experiment with different choices.** Trying alternative responses or routes may lead to different outcomes.
 - **The fight is RNG-based.** Its outcome relies on random chance rather than player skill.
 
-### AUDIO
+### Audio
 
 Headphones are recommended for the best experience.
 Sound effects and music play an important role
 A number of the music tracks are from **Yakuza 0**.
 
-## FINAL NOTES
+## Notes
 
 This project took a considerable amount of time to put together, particularly the hand-drawn artwork and animations.
+This game was made in 31/10/2026 so its going to be corny af like a week later 
 
 
 
