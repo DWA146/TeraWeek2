@@ -1,74 +1,64 @@
-you dont have to read me
+# Sell the Pen
 
-hello 
-this is my game
+A visual novel about a seemingly simple task: selling a pen.
+All artwork in the game is hand-drawn, with a lot of time spent on the illustrations, animations and overall presentation.
 
-its a visual novel
+## SCREENSHOTS
 
-all art is hand drawn
+A preview of the game:
 
-it took a lot of time to draw it i swear. especialy that 5 second animation
+<img width="1737" height="1003" alt="image" src="https://github.com/user-attachments/assets/85af5a50-3efc-4443-aba7-68c1fb167971" />
 
+<img width="1771" height="1000" alt="image" src="https://github.com/user-attachments/assets/381de020-4477-4bf7-9ca1-e564386bfb1f" />
 
-
-You are presented with an individual who is interviewing you. During this interview, you will be given the opportunity to sell them a pen. Through dialogue and various responses, you can attempt to convince the interviewer that purchasing the pen would be a reasonable decision.
-
-The game features a conversation, a pen, and the possibility of a sale. Your choices may influence the outcome of the interview.
-
-There is one interviewer. There is one pen. There is one objective.
-
-Sell the pen.
-
-Experience this unique and relatively specific scenario in a visual novel format.
-
-also if its funny please gimme moneyyyyyyyyy
+there are different pens try get them all !
 
 
-HOW TO USE IT:
+## About
+The game features:
+- An interactive dialogue system.
+- Multiple dialogue choices.
+- Different possible outcomes.
+- Hand-drawn artwork and animations.
+- A few unexpected challenges along the way.
 
+There is one interviewer, one pen, and one objective.
 
-its genuinly easy af
+**Sell the pen.**
 
-just press the link and you should be taken to itch and then u press the little triangle button which presses play belive it or not. after that you kinda just follow the instructions on the screen like it says "START GAME" you might wanna click it and when it asks for a name you mighhht wanna type a name. 
+## Latest Release
+Work for web
+- **Play the game:** [game](https://dwa146.itch.io/sell-me-this-pen)
 
+## How to launch
 
-HOW TO PLAYYYYYYY
+1. Open the itch.io link above.
+2. Click the **Play** button.
+3. Wait for the game to load.
+4. Follow the instructions displayed on screen.
 
-just go with the flow like any other visual novel
-DONT SPAM CLICK PLS 
-i made the timming in some scenes so immaculate so the sfx lines up with the words on screen
-so dont spam unless youve seen it b4 🙏🏿
+You'll be asked to enter a name before starting.
 
-good thing to do is not rush alr. alot can just happen and you might be overstim so jsut cill out and relaze 
+## HOW TO PLAY
 
-if u ever get stuck i think trying a different route will work
-also the fight is a RNG based
-no skill just random luck alr
+The game follows the standard visual novel format. Read through the dialogue and select responses as they appear.
 
-also USE HEADPGONES
-the sounds are sosugoi 
+A few things to keep in mind:
 
+- **Avoid spamming clicks.** Some dialogue and sound effects are carefully timed to synchronise with each other. Allow scenes to play out before progressing.
+- **Take your time.** There's no need to rush through the dialogue.
+- **Experiment with different choices.** Trying alternative responses or routes may lead to different outcomes.
+- **The fight is RNG-based.** Its outcome relies on random chance rather than player skill.
 
-most the osngs are  from yakuzsao 0 
+### AUDIO
 
-bc the songs are so sugoi and kawaii
+Headphones are recommended for the best experience.
+Sound effects and music play an important role
+A number of the music tracks are from **Yakuza 0**.
 
-thats all from me 
+## FINAL NOTES
 
-catcha on the flipside
-
-peace out
-
-cya
-
-bye bye 
-
-oyasumi!
-
-
-
-
-
+This project took a considerable amount of time to put together, particularly the hand-drawn artwork and animations.
 
 
 
